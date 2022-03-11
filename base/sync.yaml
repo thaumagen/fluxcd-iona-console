@@ -1,0 +1,16 @@
+kind: GitRepository
+metadata:
+  name: iona-app
+spec:
+  url: https://github.com/robinbryce/iona-app
+  ref:
+    branch: main
+---
+kind: Kustomization
+metadata:
+  name: iona-capp
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: iona-app
+  path: ./k8s/app

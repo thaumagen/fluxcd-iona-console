@@ -1,7 +1,7 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
+namespace: iona-app
 resources:
-  - sync.yaml
+  - ../../app
+  - ./namespace.yaml
   - ./certificate.yaml
 patchesJson6902:
   - target:
