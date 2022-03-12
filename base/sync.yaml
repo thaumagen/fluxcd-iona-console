@@ -19,7 +19,7 @@ metadata:
 spec:
   interval: 30s
   path: ./k8s/app
-  # prune: true
+  prune: true
   sourceRef:
     kind: GitRepository
     name: iona-app
