@@ -4,7 +4,7 @@ kind: GitRepository
 metadata:
   name: iona-app
 spec:
-  interval: 1m0s
+  interval: 30s
   prune: true
   url: https://github.com/robinbryce/iona-app
   ref:
@@ -15,7 +15,8 @@ kind: Kustomization
 metadata:
   name: iona-app
 spec:
-  interval: 1m0s
+  interval: 30s
+  prune: true
   sourceRef:
     kind: GitRepository
     name: iona-app
