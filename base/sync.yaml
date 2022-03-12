@@ -4,6 +4,8 @@ kind: GitRepository
 metadata:
   name: iona-app
 spec:
+  interval: 1m0s
+  prune: true
   url: https://github.com/robinbryce/iona-app
   ref:
     branch: main
