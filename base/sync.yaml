@@ -14,10 +14,11 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
   name: iona-app
+  namespace: iona-console
 spec:
   interval: 30s
+  path: ./k8s/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: iona-app
-  path: ./k8s/app
