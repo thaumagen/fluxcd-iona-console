@@ -16,7 +16,6 @@ metadata:
   name: iona-app
 spec:
   interval: 1m0s
-  prune: true
   sourceRef:
     kind: GitRepository
     name: iona-app
