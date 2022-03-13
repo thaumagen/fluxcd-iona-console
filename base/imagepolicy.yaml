@@ -17,8 +17,8 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: main-image-policy
-  namespace: flux-system
+  name: iona-app-main
+  namespace: iona-console
 spec:
   imageRepositoryRef:
     name: iona-app
@@ -28,3 +28,28 @@ spec:
   policy:
     numerical:
       order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: imageupdates
+  namespace: iona-console
+spec:
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: iona-console
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: fluxcdbot@users.noreply.github.com
+        name: fluxcdbot
+      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+    push:
+      branch: main
+  update:
+    path: .
+    strategy: Setters

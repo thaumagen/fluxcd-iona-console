@@ -8,4 +8,5 @@ spec:
   images:
     - name: iona-app
       newName: eu.gcr.io/iona-1/iona-app
+      newTag: main-latest  # {"$imagepolicy": "iona-console:iona-app-main:tag"}
 
