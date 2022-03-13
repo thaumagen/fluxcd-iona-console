@@ -1,3 +1,0 @@
-- op: replace
-  path: /spec/stripPrefix/prefixes/0
-  value: /console2/

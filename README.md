@@ -76,3 +76,32 @@ namespace would be just prod-iona-console
 
 This allows for further apps, that don't have namespace segregation
 requirements, to be placed in just 'prod-iona-console'
+
+## Patching app resources
+
+To patch the manifests of the target app it is necessary to update the
+fluxcd/Kustomization that *builds* the apps kustomizations. The
+kubernetes/Kustomization  in the config repository cannot directly apply
+patches to the manifests refered to by the source
+
+A common confusion here stems from fluxcd's (odd) decision to define there own
+kind: Kustomization under their apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+
+Manifests of the form:
+
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+
+Are *flux* CRD configurations which modify how the manifests in the configured sources are
+built.
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+Are kustomize manifests which *define* the configuration. The configuration
+determins the sources and the patches to apply to them during kustomize build.
+So it is typical for the config repo to use k8s/Kustomization's to PATCH
+fluxcd/Kustomization's such that the referenced manifest repositor is patched.
+
+Ie the standard model is to PATCH the desired patches into the
+fluxcd/Kustomization's

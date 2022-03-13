@@ -21,3 +21,21 @@ spec:
   sourceRef:
     kind: GitRepository
     name: iona-app
+  patches:
+    - target:
+        kind: IngressRoute
+        name: iona-app
+      patch:
+        - op: replace
+          path: /spec/routes/0/match
+          value: Host(`iona.thaumagen.io`) && PathPrefix(`/console2/`)
+        - op: replace
+          path: /spec/tls/secretName
+          value: wild-iona-thaumagen-io
+    - target:
+        kind: Middleware
+        name: strip-ingressroute-prefix
+      patch:
+        - op: replace
+          path: /spec/stripPrefix/prefixes/0
+          value: /console2/

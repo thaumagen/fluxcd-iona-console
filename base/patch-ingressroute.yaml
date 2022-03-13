@@ -1,6 +1,0 @@
-- op: replace
-  path: /spec/routes/0/match
-  value: Host(`iona.thaumagen.io`) && PathPrefix(`/console2/`)
-- op: replace
-  path: /spec/tls/secretName
-  value: wild-iona-thaumagen-io
