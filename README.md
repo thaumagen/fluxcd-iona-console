@@ -1,5 +1,13 @@
 # repo per app
 
+# TODO
+
+* [ ] configure app build to produce cal ver timestamped image tags
+* [ ] configure image policies in the config repo to take advantage of that
+* [ ] confirm that the controler picks up new images (and that workload identity auth is not breaking it)
+
+## Outline
+
 Following the model described by fluxcd [here](https://fluxcd.io/docs/guides/repository-structure/#repo-per-app)
 
 Applications are developed and mantained in their own repo (which is free to
