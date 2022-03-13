@@ -3,4 +3,5 @@ kind: Kustomization
 metadata:
   name: iona-console
   namespace: iona-console
-targetNamespace: iona-console
+spec:
+  targetNamespace: iona-console
