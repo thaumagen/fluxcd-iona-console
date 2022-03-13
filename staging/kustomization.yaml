@@ -5,4 +5,4 @@ resources:
   - ../base
 patchesStrategicMerge:
   # patch our git source reference to apply targetNamespace
-  #- patch-targetnamespace.yaml
+  - patch-targetnamespace.yaml
