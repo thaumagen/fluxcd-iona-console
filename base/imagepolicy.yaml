@@ -1,0 +1,30 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: iona-app
+  namespace: iona-console
+spec:
+  interval: 5m
+  image: eu.gcr.io/iona-1/iona-app
+  secretRef:
+    name: regcred
+  accessFrom:
+    namespaceSelectors:
+      - matchLabels:
+          kubernetes.io/metadata.name: flux-system
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: main-image-policy
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: iona-app
+  filterTags:
+    pattern: '^main-[a-f0-9]+-(?P<monotonic>[0-9]+)'
+    extract: '$monotonic'
+  policy:
+    numerical:
+      order: asc
