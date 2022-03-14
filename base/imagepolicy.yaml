@@ -7,8 +7,8 @@ metadata:
 spec:
   interval: 5m
   image: eu.gcr.io/iona-1/iona-app
-  secretRef:
-    name: regcred
+  # secretRef:
+  #   name: regcred
   accessFrom:
     namespaceSelectors:
       - matchLabels:
