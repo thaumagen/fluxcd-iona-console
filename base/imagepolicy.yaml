@@ -24,8 +24,8 @@ spec:
     name: iona-app
   filterTags:
     # pattern: '^main-[a-f0-9]+-[0-9]+.[0-9]+.(?P<monotonic>[0-9]+)'
-    pattern: '^main-(?P<monotonic>.+)'
-    extract: '$monotonic'
+    pattern: '^main-(?P<ts>[0-9]+)'
+    extract: '$ts'
   policy:
     numerical:
       order: asc
