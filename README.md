@@ -113,3 +113,12 @@ fluxcd/Kustomization's such that the referenced manifest repositor is patched.
 
 Ie the standard model is to PATCH the desired patches into the
 fluxcd/Kustomization's
+
+## SSH Deploy Key
+
+Using flux to create an ssh deploy key in git is how to enable image automation
+and push access
+
+https://fluxcd.io/docs/migration/flux-v1-automation-migration/#replacing-an-ssh-key-secret
+
+flux create secret git -n flux-system fluxcd-iona-console --url ssh://git@github.com/thaumagen/fluxcd-iona
