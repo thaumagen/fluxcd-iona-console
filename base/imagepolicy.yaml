@@ -36,7 +36,7 @@ metadata:
   namespace: iona-console
 spec:
   interval: 30s
-  url: ssh://git@github.com/thaumagen/fluxcd-iona-console
+  url: ssh://git@github.com/thaumagen/fluxcd-iona-console.git
   ref:
     branch: main
   secretRef:
