@@ -7,8 +7,6 @@ metadata:
 spec:
   interval: 5m
   image: eu.gcr.io/iona-1/iona-app
-  # secretRef:
-  #   name: regcred
   accessFrom:
     namespaceSelectors:
       - matchLabels:
@@ -29,6 +27,21 @@ spec:
   policy:
     numerical:
       order: asc
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: iona-console-push
+  namespace: iona-console
+spec:
+  interval: 30s
+  url: ssh://git@github.com/thaumagen/fluxcd-iona-console
+  ref:
+    branch: main
+  secretRef:
+    name: fluxcd-iona-console
+
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
@@ -39,7 +52,7 @@ spec:
   interval: 30s
   sourceRef:
     kind: GitRepository
-    name: iona-console
+    name: iona-console-push
   git:
     checkout:
       ref:
