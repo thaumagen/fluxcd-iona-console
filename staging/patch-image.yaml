@@ -6,7 +6,6 @@ metadata:
   name: iona-app
 spec:
   images:
-    - name: iona-app
-      newName: eu.gcr.io/iona-1/iona-app
-      newTag: main-latest  # {"$imagepolicy": "iona-console:iona-app-main:tag"}
-
+  - name: iona-app
+    newName: eu.gcr.io/iona-1/iona-app
+    newTag: main-18 # {"$imagepolicy": "iona-console:iona-app-main:tag"}
