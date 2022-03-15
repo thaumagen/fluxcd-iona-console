@@ -1,0 +1,18 @@
+# A flux/Kustomization that will modify the images stanza in a matching
+# k8s/Deployment. Note further that the newTag here is the subject of flux image
+# update automation. Flux watches for new images in the container registry
+# matching a certain  (sortable) tag pattern and when a new one appears it
+# *commits* a change to this repository whic replaces 'main-latest' with the
+# appropriate tag.
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  # metadata is used to match the target to patch
+  namespace: iona-console
+  name: iona-app
+spec:
+  images:
+    - name: iona-app
+      newName: eu.gcr.io/iona-1/iona-app
+      newTag: main-latest  # {"$imagepolicy": "iona-console:iona-app-main:tag"}
+

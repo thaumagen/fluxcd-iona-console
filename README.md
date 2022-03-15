@@ -121,4 +121,7 @@ and push access
 
 https://fluxcd.io/docs/migration/flux-v1-automation-migration/#replacing-an-ssh-key-secret
 
-flux create secret git -n flux-system fluxcd-iona-console --url ssh://git@github.com/thaumagen/fluxcd-iona
+Note that the secret  and git sources need to be created in the same names
+repository as the imageautomation resource
+
+flux create secret git -n iona-console fluxcd-iona-console --url ssh://git@github.com/thaumagen/fluxcd-iona-console.git

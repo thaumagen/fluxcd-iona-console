@@ -10,8 +10,10 @@ spec:
   accessFrom:
     namespaceSelectors:
       - matchLabels:
+          # XXX: TODO not sure why this is flux-system rather than iona-console
           kubernetes.io/metadata.name: flux-system
 ---
+# We probably need to have a specific one for each of staging/prod/dev
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
@@ -29,6 +31,8 @@ spec:
       order: asc
 
 ---
+# This source is specific to the task of pushing image updates. This repo both
+# configures its image automation updates and is the target of those changes.
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:

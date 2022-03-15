@@ -1,3 +1,5 @@
+# This modifies the namespace applied to the application manifests source in
+# our base.
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:

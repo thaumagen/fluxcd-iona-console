@@ -1,4 +1,5 @@
-# see the README for why we patch in the patches
+# This resource patches *patches* in the target repository. See the README for
+# why we patch in the patches
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
