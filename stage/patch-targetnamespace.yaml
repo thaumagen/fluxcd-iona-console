@@ -6,4 +6,4 @@ metadata:
   # metadata is used to match the target to patch
   name: iona-app
 spec:
-  targetNamespace: iona-console
+  targetNamespace: stage-iona-console
