@@ -3,9 +3,9 @@ kind: Kustomization
 namespace: stage-iona-console
 resources:
   - ../base
+  - secret-iona-console-image-automationsealed.yaml
 patchesStrategicMerge:
   # patch our git source reference to apply targetNamespace
-  - secret-iona-console-image-automationsealed.yaml
   - patch-targetnamespace.yaml
   - patch-image-automation.yaml
   - patch-ingressroutes.yaml
