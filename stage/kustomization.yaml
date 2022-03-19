@@ -5,6 +5,7 @@ resources:
   - ../base
 patchesStrategicMerge:
   # patch our git source reference to apply targetNamespace
+  - secret-fluxcd-image-automationsealed.yaml
   - patch-targetnamespace.yaml
   - patch-image-automation.yaml
   - patch-ingressroutes.yaml
