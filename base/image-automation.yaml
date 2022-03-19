@@ -36,7 +36,7 @@ spec:
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: iona-console-push
+  name: iona-console-image-automation
   namespace: iona-console
 spec:
   interval: 30s
@@ -44,7 +44,7 @@ spec:
   ref:
     branch: main
   secretRef:
-    name: fluxcd-iona-console
+    name: fluxcd-image-automation
 
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
@@ -56,7 +56,7 @@ spec:
   interval: 30s
   sourceRef:
     kind: GitRepository
-    name: iona-console-push
+    name: iona-console-image-automation
   git:
     checkout:
       ref:
