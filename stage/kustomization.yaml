@@ -14,10 +14,10 @@ patchesJson6902:
       # version: kustomize.toolkit.fluxcd.io/v1beta2
       name: iona-app
     path: patch-ingressroutes.yaml
-  - target:
-      kind: Kustomization
-      # version: kustomize.toolkit.fluxcd.io/v1beta2
-      name: iona-app
-    path: patch-deployment-env.yaml
+  #- target:
+  #    kind: Kustomization
+  #    # version: kustomize.toolkit.fluxcd.io/v1beta2
+  #    name: iona-app
+  #  path: patch-deployment-env.yaml
 
 
