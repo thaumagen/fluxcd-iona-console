@@ -11,11 +11,12 @@ spec:
           name: iona-app
         spec:
           template:
-            containers:
-              - name: service
-                image: iona-app
-                env:
-                  - name: NODE_PATH
-                    value: stage/node
-                  - name: CHAIN_PROVIDER_PATH
-                    value: stage/chain1
+            spec:
+              containers:
+                - name: service
+                  image: iona-app
+                  env:
+                    - name: NODE_PATH
+                      value: stage/node
+                    - name: CHAIN_PROVIDER_PATH
+                      value: stage/chain1
