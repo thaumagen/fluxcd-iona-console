@@ -1,7 +1,7 @@
 # This resource patches the *patches* on the fluxcd kustomize builder resource
 # to add two patches to the kubernetes manifests being rendered
 - op: add
-  path: spec/patches
+  path: spec/patches/0
   value: |-
     - target:
         kind: IngressRoute
@@ -14,7 +14,7 @@
                path: /spec/tls/secretName
                value: wild-iona-thaumagen-io
 - op: add
-  path: spec/patches
+  path: spec/patches/0
   value: |-
     - target:
         kind: Middleware
