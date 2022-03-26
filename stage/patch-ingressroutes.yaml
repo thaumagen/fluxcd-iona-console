@@ -14,15 +14,15 @@
                path: /spec/tls/secretName
                value: wild-iona-thaumagen-io
 - op: add
-  path: spec/patches/0
+  path: spec/patches
   value: |-
-    - target:
-        kind: Middleware
-        name: strip-ingressroute-prefix
-      patch: |-
-             - op: replace
-               path: /spec/stripPrefix/prefixes/0
-               value: /stage/console/
+    target:
+      kind: Middleware
+      name: strip-ingressroute-prefix
+    patch: |-
+           - op: replace
+             path: /spec/stripPrefix/prefixes/0
+             value: /stage/console/
 
 #apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 #kind: Kustomization
