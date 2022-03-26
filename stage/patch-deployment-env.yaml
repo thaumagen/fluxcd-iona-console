@@ -3,20 +3,3 @@ kind: Kustomization
 metadata:
   name: iona-app
 spec:
-  patches:
-    - patch: |-
-        apiVersion: apps/v1
-        kind: Deployment
-        metadata:
-          name: iona-app
-        spec:
-          template:
-            spec:
-              containers:
-                - name: service
-                  image: iona-app
-                  env:
-                    - name: NODE_PATH
-                      value: stage/node
-                    - name: CHAIN_PROVIDER_PATH
-                      value: stage/chain1
