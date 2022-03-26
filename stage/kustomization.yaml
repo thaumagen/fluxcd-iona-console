@@ -9,3 +9,4 @@ patchesStrategicMerge:
   - patch-targetnamespace.yaml
   - patch-image-automation.yaml
   - patch-ingressroutes.yaml
+  - patch-deployment-env.yaml
