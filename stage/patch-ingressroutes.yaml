@@ -3,6 +3,7 @@
 - op: add
   path: /spec/patches/-
   value: |-
+    |-
     patch:
       target:
         kind: IngressRoute
@@ -17,6 +18,7 @@
 - op: add
   path: /spec/patches/-
   value: |-
+    |-
     patch:
       target:
         kind: Middleware
