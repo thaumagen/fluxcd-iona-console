@@ -1,5 +1,5 @@
 - op: add
-  path: spec/patches
+  path: spec/patches/0
   value: |-
     target:
       kind: Deployment
