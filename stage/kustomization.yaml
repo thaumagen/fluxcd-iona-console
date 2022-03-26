@@ -7,18 +7,16 @@ resources:
 patchesStrategicMerge:
   - patch-targetnamespace.yaml
   - patch-image-automation.yaml
-  # - patch-ingressroutes.yaml
-  # - patch-deployment-env.yaml
 patchesJson6902:
   # To apply multiple patches to the same list we *have* to use Json6902
   - target:
       kind: Kustomization
-      version: kustomize.toolkit.fluxcd.io/v1beta2
+      # version: kustomize.toolkit.fluxcd.io/v1beta2
       name: iona-app
     path: patch-ingressroutes.yaml
   - target:
       kind: Kustomization
-      version: kustomize.toolkit.fluxcd.io/v1beta2
+      # version: kustomize.toolkit.fluxcd.io/v1beta2
       name: iona-app
     path: patch-deployment-env.yaml
 

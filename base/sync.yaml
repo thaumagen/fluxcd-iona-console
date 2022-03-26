@@ -20,3 +20,4 @@ spec:
   sourceRef:
     kind: GitRepository
     name: iona-app
+  patches: []
