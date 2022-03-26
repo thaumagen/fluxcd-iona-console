@@ -8,6 +8,8 @@ spec:
         kind: Deployment
         name: iona-app
       patch: |-
+        apiVersion: apps/v1
+        kind: Deployment
         spec:
           template:
             spec:
