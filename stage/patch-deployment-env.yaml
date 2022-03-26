@@ -4,7 +4,11 @@ metadata:
   name: iona-app
 spec:
   patches:
-    - patch: |-
+    -
+      target:
+        kind: Deployment
+        name: iona-app
+      patch: |-
         apiVersion: apps/v1
         kind: Deployment
         metadata:
