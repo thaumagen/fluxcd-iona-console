@@ -4,13 +4,13 @@ metadata:
   name: iona-app
 spec:
   patches:
-    -
-      target:
+    - target:
         kind: Deployment
         name: iona-app
       patch: |-
         apiVersion: apps/v1
         kind: Deployment
+        metadata:
           name: iona-app
         spec:
           template:
@@ -23,3 +23,4 @@ spec:
                       value: stage/node
                     - name: CHAIN_PROVIDER_PATH
                       value: stage/chain1
+
