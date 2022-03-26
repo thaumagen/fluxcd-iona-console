@@ -1,12 +1,8 @@
-# This resource patches *patches* in the target repository. See the README for
-# why we patch in the patches
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  # metadata is used to match the target to patch
-  name: iona-app
-spec:
-  patches:
+# This resource patches the *patches* on the fluxcd kustomize builder resource
+# to add two patches to the kubernetes manifests being rendered
+- op: add
+  path: spec/patches
+  value: |-
     - target:
         kind: IngressRoute
         name: iona-app
@@ -17,6 +13,9 @@ spec:
              - op: replace
                path: /spec/tls/secretName
                value: wild-iona-thaumagen-io
+- op: add
+  path: spec/patches
+  value: |-
     - target:
         kind: Middleware
         name: strip-ingressroute-prefix
@@ -24,3 +23,28 @@ spec:
              - op: replace
                path: /spec/stripPrefix/prefixes/0
                value: /stage/console/
+
+#apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+#kind: Kustomization
+#metadata:
+#  # metadata is used to match the target to patch
+#  name: iona-app
+#spec:
+#  patches:
+#    - target:
+#        kind: IngressRoute
+#        name: iona-app
+#      patch: |-
+#             - op: replace
+#               path: /spec/routes/0/match
+#               value: Host(`iona.thaumagen.io`) && PathPrefix(`/stage/console/`)
+#             - op: replace
+#               path: /spec/tls/secretName
+#               value: wild-iona-thaumagen-io
+#    - target:
+#        kind: Middleware
+#        name: strip-ingressroute-prefix
+#      patch: |-
+#             - op: replace
+#               path: /spec/stripPrefix/prefixes/0
+#               value: /stage/console/

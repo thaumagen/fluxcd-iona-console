@@ -7,5 +7,13 @@ resources:
 patchesStrategicMerge:
   - patch-targetnamespace.yaml
   - patch-image-automation.yaml
-  - patch-ingressroutes.yaml
+  # - patch-ingressroutes.yaml
   - patch-deployment-env.yaml
+patchesJson6902:
+  - target:
+      kind: Kustomization
+      version: kustomize.toolkit.fluxcd.io/v1beta2
+      name: iona-app
+    path: patch-ingressroutes.yaml
+
+
