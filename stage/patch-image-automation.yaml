@@ -13,4 +13,4 @@ spec:
   images:
   - name: iona-app
     newName: eu.gcr.io/iona-1/iona-app
-    newTag: main-35 # {"$imagepolicy": "stage-iona-console:iona-app-main:tag"}
+    newTag: main-36 # {"$imagepolicy": "stage-iona-console:iona-app-main:tag"}
