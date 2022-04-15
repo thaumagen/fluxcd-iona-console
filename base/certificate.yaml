@@ -9,5 +9,5 @@ spec:
     - "iona.thaumagen.io"
     - "*.iona.thaumagen.io"
   issuerRef:
-    name: letsencrypt-staging-primary-dns
+    name: letsencrypt-prod-primary-dns
     kind: ClusterIssuer
