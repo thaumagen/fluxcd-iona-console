@@ -1,10 +1,10 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: "wild-iona-thaumagen-io"
+  name: "cert-wild-iona-thaumagen-io"
 spec:
   commonName: "iona.thaumagen.io"
-  secretName: wild-iona-thaumagen-io
+  secretName: cert-wild-iona-thaumagen-io
   dnsNames:
     - "iona.thaumagen.io"
     - "*.iona.thaumagen.io"

@@ -12,7 +12,7 @@
         value: Host(`iona.thaumagen.io`) && PathPrefix(`/stage/console/`)
       - op: replace
         path: /spec/tls/secretName
-        value: wild-iona-thaumagen-io
+        value: cert-wild-iona-thaumagen-io
 - op: add
   path: /spec/patches/-
   value:
@@ -40,7 +40,7 @@
 #               value: Host(`iona.thaumagen.io`) && PathPrefix(`/stage/console/`)
 #             - op: replace
 #               path: /spec/tls/secretName
-#               value: wild-iona-thaumagen-io
+#               value: cert-wild-iona-thaumagen-io
 #    - target:
 #        kind: Middleware
 #        name: strip-ingressroute-prefix
